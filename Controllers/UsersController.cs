@@ -30,14 +30,5 @@ namespace Controllers
             if (user != null) return user;
             return NotFound();
         }
-
-        [HttpPost]
-        public async Task<ActionResult<ApiUser>> CreateUser(ApiUser user)
-        {
-            _context.Users.Add(user);
-            await _context.SaveChangesAsync();
-            return user;
-        }
-
     }
 }
