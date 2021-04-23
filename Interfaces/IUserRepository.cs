@@ -2,6 +2,7 @@ using System.Collections.Generic;
 using System.Threading.Tasks;
 using DTOs;
 using Entities;
+using Helpers;
 
 namespace Interfaces
 {
@@ -12,7 +13,7 @@ namespace Interfaces
         Task<IEnumerable<ApiUser>> GetUsersAsync();
         Task<ApiUser> GetUserByIdAsync(int id);
         Task<ApiUser> GetUserByUserNameAsync(string username);
-        Task<IEnumerable<MemberDto>> GetMembersAsync();
+        Task<PagedList<MemberDto>> GetMembersAsync(UserParams userParams);
         Task<MemberDto> GetMemberByIdAsync(int id);
         Task<MemberDto> GetMemberByUsernameAsync(string username);
     }
