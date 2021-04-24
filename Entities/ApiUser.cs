@@ -18,6 +18,7 @@ namespace Entities
         public DateTime DiteLindja { get; set; }
         public string Gjinia { get; set; }
         public DateTime CreatedAt { get; set; } = DateTime.Now;
+        public DateTime LastActive {get;set;}
         // public ICollec tion<AppUserRole> UserRoles { get; set; }
         // public int GetMosha() {
         //     return DiteLindja.LlogaritMoshen();

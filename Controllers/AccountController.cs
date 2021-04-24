@@ -4,12 +4,15 @@ using System.Threading.Tasks;
 using Data;
 using DTOs;
 using Entities;
+using Helpers;
 using Interfaces;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 
 namespace Controllers
 {
+    [ServiceFilter(typeof(LogUserActivity))]
     [ApiController]
     [Route("api/[controller]")]
     public class AccountController : ControllerBase
@@ -21,7 +24,7 @@ namespace Controllers
             this._tokenService = tokenService;
             this._context = context;
         }
-
+        [Authorize]
         [HttpPost("register")]
         public async Task<ActionResult<UserDto>> RegisterUser(RegisterDto registerDto)
         {

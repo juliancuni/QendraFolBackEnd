@@ -15,5 +15,6 @@ namespace DTOs
         public int Mosha { get; set; }
         public string Gjinia { get; set; }
         public DateTime CreatedAt { get; set; }
+        public DateTime LastActive { get; set; }
     }
 }
