@@ -26,9 +26,14 @@ namespace Data.Repositories
             return await _context.Users.Where(u => u.Id == id).ProjectTo<MemberDto>(_mapper.ConfigurationProvider).SingleOrDefaultAsync();
         }
 
-        public async Task<MemberDto> GetMemberByUsernameAsync(string username)
+        public async Task<MemberDto> GetMemberByUserNameAsync(string UserName)
         {
-            return await _context.Users.Where(u => u.Username == username).ProjectTo<MemberDto>(_mapper.ConfigurationProvider).SingleOrDefaultAsync();
+            return await _context.Users.Where(u => u.UserName == UserName).ProjectTo<MemberDto>(_mapper.ConfigurationProvider).SingleOrDefaultAsync();
+        }
+
+        public Task<MemberDto> GetMemberByUsernameAsync(string username)
+        {
+            throw new System.NotImplementedException();
         }
 
         public async Task<PagedList<MemberDto>> GetMembersAsync(UserParams userParams)
@@ -42,9 +47,9 @@ namespace Data.Repositories
             return await _context.Users.Include(u => u.Fotografite).SingleOrDefaultAsync(x => x.Id == id);
         }
 
-        public async Task<ApiUser> GetUserByUserNameAsync(string username)
+        public async Task<ApiUser> GetUserByUserNameAsync(string UserName)
         {
-            return await _context.Users.Include(u => u.Fotografite).SingleOrDefaultAsync(x => x.Username == username);
+            return await _context.Users.Include(u => u.Fotografite).SingleOrDefaultAsync(x => x.UserName == UserName);
         }
 
         public async Task<IEnumerable<ApiUser>> GetUsersAsync()

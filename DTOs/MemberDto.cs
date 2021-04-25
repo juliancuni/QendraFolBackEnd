@@ -6,7 +6,7 @@ namespace DTOs
     public class MemberDto
     {
         public int Id { get; set; }
-        public string Username { get; set; }
+        public string UserName { get; set; }
         public string Emer { get; set; }
         public string Mbiemer { get; set; }
         public string NrTel { get; set; }

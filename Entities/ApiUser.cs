@@ -1,15 +1,12 @@
 using System;
 using System.Collections.Generic;
 using Extensions;
+using Microsoft.AspNetCore.Identity;
 
 namespace Entities
 {
-    public class ApiUser
+    public class ApiUser : IdentityUser<int>
     {
-        public int Id { get; set; }
-        public string Username { get; set; }
-        public byte[] PasswordHash { get; set; }
-        public byte[] PasswordSalt { get; set; }
         public string Emer { get; set; }
         public string Mbiemer { get; set; }
         public string NrTel { get; set; }
@@ -19,6 +16,8 @@ namespace Entities
         public string Gjinia { get; set; }
         public DateTime CreatedAt { get; set; } = DateTime.Now;
         public DateTime LastActive {get;set;}
+        public ICollection<ApiUserRole> UserRoles { get; set; }
+
         // public ICollec tion<AppUserRole> UserRoles { get; set; }
         // public int GetMosha() {
         //     return DiteLindja.LlogaritMoshen();
