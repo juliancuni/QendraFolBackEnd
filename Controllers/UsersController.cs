@@ -1,23 +1,16 @@
 using System.Collections.Generic;
 using System.Threading.Tasks;
 using AutoMapper;
-using Data;
 using DTOs;
-using Entities;
 using Extensions;
 using Helpers;
 using Interfaces;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.EntityFrameworkCore;
 
 namespace Controllers
 {
-    [ServiceFilter(typeof(LogUserActivity))]
-    [ApiController]
-    [Route("api/[controller]")]
-    [Authorize]
-    public class UsersController : ControllerBase
+    public class UsersController : BaseController
     {
         private readonly IUserRepository _userRepository;
         private readonly IMapper _mapper;
@@ -28,6 +21,7 @@ namespace Controllers
         }
 
         [HttpGet]
+        [Authorize(Roles = "root")]
         public async Task<ActionResult<IEnumerable<MemberDto>>> GetUsers([FromQuery] UserParams userParams)
         {
             var users = await _userRepository.GetMembersAsync(userParams);
@@ -35,7 +29,7 @@ namespace Controllers
             Response.AddPaginationHeader(users.CurrentPage, users.PageSize, users.TotalCount, users.TotalPages);
             return Ok(users);
         }
-
+        [Authorize(Roles = "user")]
         [HttpGet("id/{id}")]
         public async Task<ActionResult<MemberDto>> GetUserById(int id)
         {
@@ -44,7 +38,7 @@ namespace Controllers
             if (user != null) return user;
             return NotFound();
         }
-
+        [Authorize(Roles = "user")]
         [HttpGet("username/{username}")]
         public async Task<ActionResult<MemberDto>> GetUserByUsername(string username)
         {

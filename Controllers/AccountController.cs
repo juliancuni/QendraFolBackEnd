@@ -1,20 +1,14 @@
 using System.Threading.Tasks;
-using Data;
 using DTOs;
 using Entities;
-using Helpers;
 using Interfaces;
-using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 
 namespace Controllers
 {
-    [ServiceFilter(typeof(LogUserActivity))]
-    [ApiController]
-    [Route("api/[controller]")]
-    public class AccountController : ControllerBase
+    public class AccountController : BaseController
     {
         private readonly ITokenService _tokenService;
         private readonly UserManager<ApiUser> _userManager;
@@ -37,10 +31,14 @@ namespace Controllers
             };
             var result = await _userManager.CreateAsync(user, registerDto.Password);
             if(!result.Succeeded) return BadRequest(result.Errors);
+
+            var roleResult = await _userManager.AddToRoleAsync(user, "User");
+            if(!roleResult.Succeeded) return BadRequest(result.Errors);
+            
             return new UserDto
             {
                 UserName = user.UserName,
-                Token = _tokenService.CreateToken(user),
+                Token = await _tokenService.CreateToken(user),
             };
         }
 
@@ -48,15 +46,15 @@ namespace Controllers
         public async Task<ActionResult<UserDto>> LoginUser(LoginDto loginDto)
         {
             var user = await _userManager.Users.SingleOrDefaultAsync(x => x.UserName == loginDto.UserName.ToLower());
-            if (user == null) return Unauthorized("Invalid UserName and/or password - User");
+            if (user == null) return Unauthorized("Invalid UserName and/or password");
             var result = await _signInManager.CheckPasswordSignInAsync(user, loginDto.Password, false);
 
-            if(!result.Succeeded) return Unauthorized("Invalid UserName and/or password - Pass");
+            if(!result.Succeeded) return Unauthorized("Invalid UserName and/or password");
 
             return new UserDto
             {
                 UserName = user.UserName,
-                Token = _tokenService.CreateToken(user),
+                Token = await _tokenService.CreateToken(user),
             }; ;
         }
         private async Task<bool> UserExists(string UserName)
