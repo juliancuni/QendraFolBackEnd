@@ -55,6 +55,9 @@ namespace Controllers
             {
                 UserName = user.UserName,
                 Token = await _tokenService.CreateToken(user),
+                Email = user.Email,
+                Emer = user.Emer,
+                Mbiemer = user.Mbiemer,
             }; ;
         }
         private async Task<bool> UserExists(string UserName)
