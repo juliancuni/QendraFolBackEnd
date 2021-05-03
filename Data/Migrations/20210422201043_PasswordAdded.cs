@@ -1,7 +1,7 @@
 ﻿using System;
 using Microsoft.EntityFrameworkCore.Migrations;
 
-namespace QendraFolApi.Data.Migrations
+namespace BackEnd.QendraFolApi.Data.Migrations
 {
     public partial class PasswordAdded : Migration
     {

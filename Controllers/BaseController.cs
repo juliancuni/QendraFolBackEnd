@@ -1,7 +1,7 @@
-using Helpers;
+using BackEnd.Helpers;
 using Microsoft.AspNetCore.Mvc;
 
-namespace Controllers
+namespace BackEnd.Controllers
 {
     [ServiceFilter(typeof(LogUserActivity))]
     [ApiController]

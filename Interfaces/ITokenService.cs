@@ -1,7 +1,7 @@
 using System.Threading.Tasks;
 using BackEnd.Entities;
 
-namespace Interfaces
+namespace BackEnd.Interfaces
 {
     public interface ITokenService
     {

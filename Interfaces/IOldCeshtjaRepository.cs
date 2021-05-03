@@ -6,10 +6,10 @@ namespace BackEnd.Interfaces
 {
     public interface IOldCeshtjaRepository
     {
-        Task<IEnumerable<OldCeshtja>> GetOldCeshtjaAsync();
+        Task<IEnumerable<OldCeshtja>> GetOldCeshtjetAsync();
         Task<OldCeshtja> GetOldCeshtjaByIdAsync(int id);
         Task<bool> SaveAllOlDCeshtjaAsync(IEnumerable<OldCeshtja> oldCeshtjet);
-        Task<bool> CreateOldCeshtjaAsync(OldCeshtja oldCeshtja);
+        bool CreateOldCeshtjaAsync(OldCeshtja oldCeshtja);
 
     }
 }

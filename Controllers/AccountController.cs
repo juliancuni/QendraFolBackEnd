@@ -1,12 +1,12 @@
 using System.Threading.Tasks;
-using DTOs;
+using BackEnd.DTOs;
 using BackEnd.Entities;
-using Interfaces;
+using BackEnd.Interfaces;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 
-namespace Controllers
+namespace BackEnd.Controllers
 {
     public class AccountController : BaseController
     {

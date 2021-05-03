@@ -1,7 +1,7 @@
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Hosting;
 
-namespace QendraFolApi
+namespace BackEnd.QendraFolApi
 {
     public class Program
     {

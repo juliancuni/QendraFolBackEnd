@@ -1,4 +1,4 @@
-namespace Helpers
+namespace BackEnd.Helpers
 {
     public class UserParams
     {

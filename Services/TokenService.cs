@@ -6,12 +6,12 @@ using System.Security.Claims;
 using System.Text;
 using System.Threading.Tasks;
 using BackEnd.Entities;
-using Interfaces;
+using BackEnd.Interfaces;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.Extensions.Configuration;
 using Microsoft.IdentityModel.Tokens;
 
-namespace Services
+namespace BackEnd.Services
 {
     public class TokenService : ITokenService
     {

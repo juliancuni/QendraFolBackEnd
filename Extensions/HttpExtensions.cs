@@ -1,8 +1,8 @@
 using System.Text.Json;
-using Helpers;
+using BackEnd.Helpers;
 using Microsoft.AspNetCore.Http;
 
-namespace Extensions
+namespace BackEnd.Extensions
 {
     public static class HttpExtensions
     {

@@ -3,13 +3,13 @@ using System.Linq;
 using System.Threading.Tasks;
 using AutoMapper;
 using AutoMapper.QueryableExtensions;
-using DTOs;
+using BackEnd.DTOs;
+using BackEnd.Interfaces;
 using BackEnd.Entities;
-using Helpers;
-using Interfaces;
 using Microsoft.EntityFrameworkCore;
+using BackEnd.Helpers;
 
-namespace Data.Repositories
+namespace BackEnd.Data.Repositories
 {
     public class UserRepository : IUserRepository
     {
@@ -41,6 +41,7 @@ namespace Data.Repositories
             var query = _context.Users.ProjectTo<MemberDto>(_mapper.ConfigurationProvider).AsNoTracking();
             return await PagedList<MemberDto>.CreateAsync(query, userParams.PageNumber, userParams.PageSize);
         }
+
 
         public async Task<ApiUser> GetUserByIdAsync(int id)
         {

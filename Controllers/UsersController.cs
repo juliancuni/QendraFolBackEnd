@@ -1,14 +1,14 @@
 using System.Collections.Generic;
 using System.Threading.Tasks;
 using AutoMapper;
-using DTOs;
-using Extensions;
-using Helpers;
-using Interfaces;
+using BackEnd.DTOs;
+using BackEnd.Extensions;
+using BackEnd.Helpers;
+using BackEnd.Interfaces;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
-namespace Controllers
+namespace BackEnd.Controllers
 {
     public class UsersController : BaseController
     {

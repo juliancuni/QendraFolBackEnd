@@ -1,6 +1,6 @@
 using System;
 using System.Collections.Generic;
-using Extensions;
+using BackEnd.Extensions;
 using Microsoft.AspNetCore.Identity;
 
 namespace BackEnd.Entities

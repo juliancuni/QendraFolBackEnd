@@ -1,10 +1,10 @@
 using System.Collections.Generic;
 using System.Threading.Tasks;
-using DTOs;
+using BackEnd.DTOs;
 using BackEnd.Entities;
-using Helpers;
+using BackEnd.Helpers;
 
-namespace Interfaces
+namespace BackEnd.Interfaces
 {
     public interface IUserRepository
     {

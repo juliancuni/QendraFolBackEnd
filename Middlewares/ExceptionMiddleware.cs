@@ -2,12 +2,12 @@ using System;
 using System.Net;
 using System.Text.Json;
 using System.Threading.Tasks;
-using Errors;
+using BackEnd.Errors;
 using Microsoft.AspNetCore.Http;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 
-namespace Middlewares
+namespace BackEnd.Middlewares
 {
     public class ExceptionMiddleware
     {

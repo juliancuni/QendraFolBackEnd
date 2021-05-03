@@ -2,7 +2,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.OpenApi.Models;
 
-namespace Extensions
+namespace BackEnd.Extensions
 {
     public static class SwaggerServiceExtensions
     {
@@ -10,7 +10,7 @@ namespace Extensions
         {
             services.AddSwaggerGen(c =>
                         {
-                            c.SwaggerDoc("v1", new OpenApiInfo { Title = "QendraFolApi", Version = "v1", Description = "QendraFol Api Backend Service" });
+                            c.SwaggerDoc("v1", new OpenApiInfo { Title = "QendraFolApi", Version = "v1", Description = "QendraFol Api BackEnd Service" });
                             c.AddSecurityDefinition("Bearer", new OpenApiSecurityScheme()
                             {
                                 Name = "Authorization",

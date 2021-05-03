@@ -1,4 +1,4 @@
-namespace Errors
+namespace BackEnd.Errors
 {
     public class ApiException
     {

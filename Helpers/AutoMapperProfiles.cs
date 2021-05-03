@@ -1,10 +1,10 @@
 using System.Linq;
 using AutoMapper;
-using DTOs;
+using BackEnd.DTOs;
 using BackEnd.Entities;
-using Extensions;
+using BackEnd.Extensions;
 
-namespace Helpers
+namespace BackEnd.Helpers
 {
     public class AutoMapperProfiles : Profile
     {

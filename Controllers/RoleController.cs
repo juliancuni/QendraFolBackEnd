@@ -1,12 +1,12 @@
 using System.Collections.Generic;
 using System.Threading.Tasks;
-using Controllers;
+using BackEnd.Controllers;
 using BackEnd.Entities;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 
-namespace Data.Repositories
+namespace BackEnd.Data.Repositories
 {
 
     public class RoleController : BaseController

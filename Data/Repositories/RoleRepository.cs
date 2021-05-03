@@ -1,9 +1,9 @@
 using System.Collections.Generic;
 using System.Threading.Tasks;
 using BackEnd.Entities;
-using Interfaces;
+using BackEnd.Interfaces;
 
-namespace Data.Repositories
+namespace BackEnd.Data.Repositories
 {
     public class RoleRepository : IRoleRepository
     {

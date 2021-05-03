@@ -1,7 +1,7 @@
 using System;
 using System.Collections.Generic;
 
-namespace DTOs
+namespace BackEnd.DTOs
 {
     public class MemberDto
     {

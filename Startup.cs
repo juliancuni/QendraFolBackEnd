@@ -3,10 +3,10 @@ using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
-using Extensions;
-using Middlewares;
+using BackEnd.Extensions;
+using BackEnd.Middlewares;
 
-namespace QendraFolApi
+namespace BackEnd.QendraFolApi
 {
     public class Startup
     {
