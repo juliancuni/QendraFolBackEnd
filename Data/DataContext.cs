@@ -1,4 +1,5 @@
-using Entities;
+using BackEnd.Entities;
+// using Entities;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
@@ -18,6 +19,7 @@ namespace Data
         public DataContext(DbContextOptions options) : base(options)
         {
         }
+        public DbSet<OldCeshtja> OldCeshtja { get; set; }
         protected override void OnModelCreating(ModelBuilder builder)
         {
             base.OnModelCreating(builder);

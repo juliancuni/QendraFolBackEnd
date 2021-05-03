@@ -1,6 +1,6 @@
 using System.Threading.Tasks;
 using DTOs;
-using Entities;
+using BackEnd.Entities;
 using Interfaces;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;

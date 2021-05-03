@@ -1,6 +1,6 @@
 using Microsoft.AspNetCore.Identity;
 
-namespace Entities
+namespace BackEnd.Entities
 {
     public class ApiUserRole : IdentityUserRole<int>
     {

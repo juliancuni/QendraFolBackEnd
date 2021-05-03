@@ -1,7 +1,7 @@
 using System.Collections.Generic;
 using Microsoft.AspNetCore.Identity;
 
-namespace Entities
+namespace BackEnd.Entities
 {
     public class ApiRole : IdentityRole<int>
     {

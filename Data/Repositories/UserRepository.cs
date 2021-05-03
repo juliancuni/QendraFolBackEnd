@@ -4,7 +4,7 @@ using System.Threading.Tasks;
 using AutoMapper;
 using AutoMapper.QueryableExtensions;
 using DTOs;
-using Entities;
+using BackEnd.Entities;
 using Helpers;
 using Interfaces;
 using Microsoft.EntityFrameworkCore;

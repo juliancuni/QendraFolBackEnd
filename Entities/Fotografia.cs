@@ -1,4 +1,4 @@
-namespace Entities
+namespace BackEnd.Entities
 {
     public class Fotografia
     {

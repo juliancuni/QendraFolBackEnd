@@ -1,5 +1,5 @@
 using System.Threading.Tasks;
-using Entities;
+using BackEnd.Entities;
 
 namespace Interfaces
 {

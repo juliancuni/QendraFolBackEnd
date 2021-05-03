@@ -1,6 +1,6 @@
 using System.Collections.Generic;
 using System.Threading.Tasks;
-using Entities;
+using BackEnd.Entities;
 using Interfaces;
 
 namespace Data.Repositories

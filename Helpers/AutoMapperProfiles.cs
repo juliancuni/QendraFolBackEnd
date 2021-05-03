@@ -1,7 +1,7 @@
 using System.Linq;
 using AutoMapper;
 using DTOs;
-using Entities;
+using BackEnd.Entities;
 using Extensions;
 
 namespace Helpers

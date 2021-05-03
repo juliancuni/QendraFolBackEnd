@@ -1,7 +1,7 @@
 using System.Collections.Generic;
 using System.Threading.Tasks;
 using DTOs;
-using Entities;
+using BackEnd.Entities;
 using Helpers;
 
 namespace Interfaces
