@@ -20,6 +20,7 @@ namespace BackEnd.Data
         {
         }
         public DbSet<OldCeshtja> OldCeshtja { get; set; }
+        public DbSet<BulkCreateReport> BulkCreateReport { get; set; }
         protected override void OnModelCreating(ModelBuilder builder)
         {
             base.OnModelCreating(builder);
