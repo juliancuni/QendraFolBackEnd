@@ -11,7 +11,7 @@ namespace BackEnd.Interfaces
         Task<BulkCreateReport> BulkCreateOldCeshtjeAsync(IEnumerable<OldCeshtja> oldCeshtje);
         Task<OldCeshtja> CreateOldCeshtjaAsync(OldCeshtja oldCeshtja);
         Task<bool> SaveAllAsync();
-        void UpdateOldCeshtja(OldCeshtja oldCeshtja);
+        Task<OldCeshtja> UpdateOldCeshtjaAsync(OldCeshtja oldCeshtja);
         void DeleteOldCeshtja(OldCeshtja oldCeshtja);
 
     }

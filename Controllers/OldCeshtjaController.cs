@@ -47,9 +47,15 @@ namespace BackEnd.Controllers
 
         [HttpPut]
         [Authorize(Roles = "admin")]
-        public void Update(OldCeshtja oldCeshtja)
+        public async Task<ActionResult<OldCeshtja>> Update(OldCeshtja oldCeshtja)
         {
-            _repository.UpdateOldCeshtja(oldCeshtja);
+            return await _repository.UpdateOldCeshtjaAsync(oldCeshtja);
+            // var result = await _repository.UpdateOldCeshtjaAsync(oldCeshtja) > 0;
+            // if (result)
+            // {
+            //     return Ok(oldCeshtja);
+            // }
+            // return BadRequest("Something's wrong with your entity or with the server");
         }
         [HttpDelete]
         [Authorize(Roles = "admin")]

@@ -70,10 +70,26 @@ namespace BackEnd.Data.Repositories
             return await _context.SaveChangesAsync() > 0;
         }
 
-        public void UpdateOldCeshtja(OldCeshtja oldCeshtja)
+        public async Task<OldCeshtja> UpdateOldCeshtjaAsync(OldCeshtja oldCeshtja)
         {
-            _context.OldCeshtja.Update(oldCeshtja);
-            _context.SaveChanges();
+            _context.Entry(oldCeshtja).State = oldCeshtja.Id == 0 ? EntityState.Added : EntityState.Modified;
+            // var findResult = await _context.OldCeshtja.FirstOrDefaultAsync(
+            //             o =>
+            //             o.OldId == oldCeshtja.OldId &&
+            //             o.Emri == oldCeshtja.Emri &&
+            //             o.Mbiemri == oldCeshtja.Mbiemri &&
+            //             o.Data_e_ngjarjes == oldCeshtja.Data_e_ngjarjes
+            //         );
+            // if (findResult != null)
+            // {
+            //     _context.OldCeshtja.Update(oldCeshtja);
+            // }
+            // else
+            // {
+            //     await _context.OldCeshtja.AddAsync(oldCeshtja);
+            // }
+            await _context.SaveChangesAsync();
+            return oldCeshtja;
         }
 
         public void DeleteOldCeshtja(OldCeshtja oldCeshtja)
