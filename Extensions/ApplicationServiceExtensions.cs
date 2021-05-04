@@ -1,9 +1,7 @@
 using BackEnd.Data.Repositories;
 using BackEnd.Interfaces;
 using BackEnd.Data;
-using BackEnd.Data.Repositories;
 using BackEnd.Helpers;
-using BackEnd.Interfaces;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;

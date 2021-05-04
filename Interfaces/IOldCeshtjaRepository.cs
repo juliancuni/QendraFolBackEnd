@@ -8,8 +8,11 @@ namespace BackEnd.Interfaces
     {
         Task<IEnumerable<OldCeshtja>> GetOldCeshtjetAsync();
         Task<OldCeshtja> GetOldCeshtjaByIdAsync(int id);
-        Task<bool> SaveAllOlDCeshtjaAsync(IEnumerable<OldCeshtja> oldCeshtjet);
-        bool CreateOldCeshtjaAsync(OldCeshtja oldCeshtja);
+        Task<BulkCreateReport> BulkCreateOldCeshtjeAsync(IEnumerable<OldCeshtja> oldCeshtje);
+        Task<OldCeshtja> CreateOldCeshtjaAsync(OldCeshtja oldCeshtja);
+        Task<bool> SaveAllAsync();
+        void UpdateOldCeshtja(OldCeshtja oldCeshtja);
+        void DeleteOldCeshtja(OldCeshtja oldCeshtja);
 
     }
 }

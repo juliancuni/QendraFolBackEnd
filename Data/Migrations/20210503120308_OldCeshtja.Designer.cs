@@ -4,14 +4,16 @@ using BackEnd.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace BackEnd.QendraFolApi.Data.Migrations
 {
     [DbContext(typeof(DataContext))]
-    partial class DataContextModelSnapshot : ModelSnapshot
+    [Migration("20210503120308_OldCeshtja")]
+    partial class OldCeshtja
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -188,103 +190,132 @@ namespace BackEnd.QendraFolApi.Data.Migrations
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
                     b.Property<string>("Data_Gjygjtari_pr")
-                        .HasColumnType("nvarchar(max)");
+                        .HasColumnType("nvarchar(max)")
+                        .HasColumnName("Data Gjygjtari pr");
 
                     b.Property<string>("Data_Gjykata_Larte")
-                        .HasColumnType("nvarchar(max)");
+                        .HasColumnType("nvarchar(max)")
+                        .HasColumnName("Data Gjykata Larte");
 
                     b.Property<string>("Data_Vedim_Gjk")
-                        .HasColumnType("nvarchar(max)");
+                        .HasColumnType("nvarchar(max)")
+                        .HasColumnName("Data Vedim Gjk");
 
                     b.Property<string>("Data_Vendim_Apeli")
-                        .HasColumnType("nvarchar(max)");
+                        .HasColumnType("nvarchar(max)")
+                        .HasColumnName("Data Vendim Apeli");
 
                     b.Property<string>("Data_Vendimit_GJ_SH1")
-                        .HasColumnType("nvarchar(max)");
+                        .HasColumnType("nvarchar(max)")
+                        .HasColumnName("Data Vendimit GJ SH1");
 
                     b.Property<string>("Data_Vendimit_Pr")
-                        .HasColumnType("nvarchar(max)");
+                        .HasColumnType("nvarchar(max)")
+                        .HasColumnName("Data Vendimit Pr");
 
                     b.Property<string>("Data_e_ngjarjes")
-                        .HasColumnType("nvarchar(max)");
+                        .HasColumnType("nvarchar(max)")
+                        .HasColumnName("Data_e_ngjarjes");
 
                     b.Property<string>("Data_mas_sig_Apeli")
-                        .HasColumnType("nvarchar(max)");
+                        .HasColumnType("nvarchar(max)")
+                        .HasColumnName("Data mas sig Apeli");
 
                     b.Property<string>("Data_mas_sig_Gj_Larte")
-                        .HasColumnType("nvarchar(max)");
+                        .HasColumnType("nvarchar(max)")
+                        .HasColumnName("Data mas sig Gj Larte");
 
                     b.Property<string>("Data_mases_Gjykates_Shk1")
-                        .HasColumnType("nvarchar(max)");
+                        .HasColumnType("nvarchar(max)")
+                        .HasColumnName("Data mases Gjykates Shk1");
 
                     b.Property<string>("Emri")
-                        .HasColumnType("nvarchar(max)");
+                        .HasColumnType("nvarchar(max)")
+                        .HasColumnName("Emri");
 
                     b.Property<string>("Gjygjtari_paraprak")
-                        .HasColumnType("nvarchar(max)");
+                        .HasColumnType("nvarchar(max)")
+                        .HasColumnName("Gjygjtari paraprak");
 
                     b.Property<string>("Gjykata")
-                        .HasColumnType("nvarchar(max)");
+                        .HasColumnType("nvarchar(max)")
+                        .HasColumnName("Gjykata");
 
                     b.Property<string>("Hetimi")
-                        .HasColumnType("nvarchar(max)");
+                        .HasColumnType("nvarchar(max)")
+                        .HasColumnName("Hetimi");
 
                     b.Property<string>("Kategoria")
-                        .HasColumnType("nvarchar(max)");
+                        .HasColumnType("nvarchar(max)")
+                        .HasColumnName("Kategoria");
 
                     b.Property<string>("Komente")
-                        .HasColumnType("nvarchar(max)");
+                        .HasColumnType("nvarchar(max)")
+                        .HasColumnName("Komente");
 
                     b.Property<string>("Masa_e_sigurise_Gjykata_Shk1")
-                        .HasColumnType("nvarchar(max)");
+                        .HasColumnType("nvarchar(max)")
+                        .HasColumnName("Masa e sigurise Gjykata Shk1");
 
                     b.Property<string>("Masa_e_sigurisë_kërkuar_nga_Prokurori")
-                        .HasColumnType("nvarchar(max)");
+                        .HasColumnType("nvarchar(max)")
+                        .HasColumnName("Masa e sigurisë kërkuar nga Prokurori");
 
                     b.Property<string>("Masa_e_sigurisë_në_Gjykatën_e_Apelit")
-                        .HasColumnType("nvarchar(max)");
+                        .HasColumnType("nvarchar(max)")
+                        .HasColumnName("Masa e sigurisë në Gjykatën e Apelit");
 
                     b.Property<string>("Masa_e_sigurisë_në_Gjykatën_e_Larte")
-                        .HasColumnType("nvarchar(max)");
+                        .HasColumnType("nvarchar(max)")
+                        .HasColumnName("Masa e sigurisë në Gjykatën e Larte");
 
                     b.Property<string>("Mbiemri")
-                        .HasColumnType("nvarchar(max)");
+                        .HasColumnType("nvarchar(max)")
+                        .HasColumnName("Mbiemri");
 
                     b.Property<string>("Neni_Apeli")
-                        .HasColumnType("nvarchar(max)");
+                        .HasColumnType("nvarchar(max)")
+                        .HasColumnName("Neni_Apeli");
 
                     b.Property<string>("Neni_GJL")
-                        .HasColumnType("nvarchar(max)");
+                        .HasColumnType("nvarchar(max)")
+                        .HasColumnName("Neni_GJL");
 
                     b.Property<string>("Neni_GJP")
-                        .HasColumnType("nvarchar(max)");
+                        .HasColumnType("nvarchar(max)")
+                        .HasColumnName("Neni_GJP");
 
                     b.Property<string>("Neni_GJSH1")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<int>("OldId")
-                        .HasColumnType("int");
+                        .HasColumnType("nvarchar(max)")
+                        .HasColumnName("Neni_GJSH1");
 
                     b.Property<string>("Policia")
-                        .HasColumnType("nvarchar(max)");
+                        .HasColumnType("nvarchar(max)")
+                        .HasColumnName("Policia");
 
                     b.Property<string>("Prokuroria")
-                        .HasColumnType("nvarchar(max)");
+                        .HasColumnType("nvarchar(max)")
+                        .HasColumnName("Prokuroria");
 
                     b.Property<string>("Sipas_Nenit")
-                        .HasColumnType("nvarchar(max)");
+                        .HasColumnType("nvarchar(max)")
+                        .HasColumnName("Sipas Nenit");
 
                     b.Property<string>("Sipas_Nenit_P")
-                        .HasColumnType("nvarchar(max)");
+                        .HasColumnType("nvarchar(max)")
+                        .HasColumnName("Sipas Nenit_P");
 
                     b.Property<string>("Vendim_Gjykata_Larte")
-                        .HasColumnType("nvarchar(max)");
+                        .HasColumnType("nvarchar(max)")
+                        .HasColumnName("Vendim Gjykata Larte");
 
                     b.Property<string>("Vendimi_Apelit")
-                        .HasColumnType("nvarchar(max)");
+                        .HasColumnType("nvarchar(max)")
+                        .HasColumnName("Vendimi Apelit");
 
                     b.Property<string>("Vendimi_Gjykates_Shk1")
-                        .HasColumnType("nvarchar(max)");
+                        .HasColumnType("nvarchar(max)")
+                        .HasColumnName("Vendimi Gjykates Shk1");
 
                     b.HasKey("Id");
 
