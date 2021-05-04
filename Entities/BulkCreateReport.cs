@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace BackEnd.Entities
 {
@@ -8,7 +9,7 @@ namespace BackEnd.Entities
         public int Id { get; set; }
         public int NrImportSuccess { get; set; }
         public int NrImportFailure { get; set; }
-        public List<int> ImportFailedIds { get; set; }
+        public string ImportFailedIds { get; set; }
         public string User { get; set; }
         public DateTime DateOfImport { get; set; } = DateTime.Now;
     }

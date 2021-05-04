@@ -4,24 +4,29 @@ using BackEnd.Entities;
 using BackEnd.Interfaces;
 using BackEnd.Data;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.AspNetCore.Http;
+using System.Security.Claims;
 
 namespace BackEnd.Data.Repositories
 {
     public class OldCeshtjaRepository : IOldCeshtjaRepository
     {
         private readonly DataContext _context;
-        public OldCeshtjaRepository(DataContext dataContext)
+        private readonly IHttpContextAccessor _httpContext;
+        public OldCeshtjaRepository(IHttpContextAccessor httpContext, DataContext dataContext)
         {
             this._context = dataContext;
+            this._httpContext = httpContext;
         }
 
         public async Task<BulkCreateReport> BulkCreateOldCeshtjeAsync(IEnumerable<OldCeshtja> oldCeshtjet)
         {
             var report = new BulkCreateReport();
-            report.ImportFailedIds = new List<int> { };
+            report.ImportFailedIds += "[";
             report.NrImportFailure = 0;
             report.NrImportSuccess = 0;
-            report.User = "";
+            report.User = _httpContext.HttpContext.User.FindFirstValue(ClaimTypes.Name);
+
             foreach (OldCeshtja oldCeshtja in oldCeshtjet)
             {
                 var findResult = await _context.OldCeshtja.FirstOrDefaultAsync(
@@ -34,7 +39,7 @@ namespace BackEnd.Data.Repositories
                 if (findResult != null)
                 {
                     report.NrImportFailure += 1;
-                    report.ImportFailedIds.Add(findResult.OldId);
+                    report.ImportFailedIds += findResult.OldId.ToString() + ", ";
                 }
                 else
                 {
@@ -43,6 +48,8 @@ namespace BackEnd.Data.Repositories
 
                 }
             }
+            report.ImportFailedIds += "]";
+            await _context.BulkCreateReport.AddAsync(report);
             await _context.SaveChangesAsync();
 
             return report;
