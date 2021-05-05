@@ -4,14 +4,16 @@ using BackEnd.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace BackEnd.QendraFolApi.Data.Migrations
 {
     [DbContext(typeof(DataContext))]
-    partial class DataContextModelSnapshot : ModelSnapshot
+    [Migration("20210505114316_OldCeshtjaDateTimeChanged")]
+    partial class OldCeshtjaDateTimeChanged
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -214,34 +216,34 @@ namespace BackEnd.QendraFolApi.Data.Migrations
                         .HasColumnType("int")
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-                    b.Property<DateTime?>("Data_Gjygjtari_pr")
+                    b.Property<DateTime>("Data_Gjygjtari_pr")
                         .HasColumnType("datetime2");
 
-                    b.Property<DateTime?>("Data_Gjykata_Larte")
+                    b.Property<DateTime>("Data_Gjykata_Larte")
                         .HasColumnType("datetime2");
 
-                    b.Property<DateTime?>("Data_Vedim_Gjk")
+                    b.Property<DateTime>("Data_Vedim_Gjk")
                         .HasColumnType("datetime2");
 
-                    b.Property<DateTime?>("Data_Vendim_Apeli")
+                    b.Property<DateTime>("Data_Vendim_Apeli")
                         .HasColumnType("datetime2");
 
-                    b.Property<DateTime?>("Data_Vendimit_GJ_SH1")
+                    b.Property<DateTime>("Data_Vendimit_GJ_SH1")
                         .HasColumnType("datetime2");
 
-                    b.Property<DateTime?>("Data_Vendimit_Pr")
+                    b.Property<DateTime>("Data_Vendimit_Pr")
                         .HasColumnType("datetime2");
 
-                    b.Property<DateTime?>("Data_e_ngjarjes")
+                    b.Property<DateTime>("Data_e_ngjarjes")
                         .HasColumnType("datetime2");
 
-                    b.Property<DateTime?>("Data_mas_sig_Apeli")
+                    b.Property<DateTime>("Data_mas_sig_Apeli")
                         .HasColumnType("datetime2");
 
-                    b.Property<DateTime?>("Data_mas_sig_Gj_Larte")
+                    b.Property<DateTime>("Data_mas_sig_Gj_Larte")
                         .HasColumnType("datetime2");
 
-                    b.Property<DateTime?>("Data_mases_Gjykates_Shk1")
+                    b.Property<DateTime>("Data_mases_Gjykates_Shk1")
                         .HasColumnType("datetime2");
 
                     b.Property<string>("Emri")
